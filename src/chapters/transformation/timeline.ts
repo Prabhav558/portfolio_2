@@ -147,7 +147,12 @@ export function buildTimeline(
     L.terraces.forEach((_, i) => {
       if (i === 0) return;
       const prev = i === 1 ? A + (Y0 - 14 - L.G) : L.focus[i - 1];
-      tl.fromTo(S, { focus: prev }, { focus: L.focus[i], duration: 3.6, ease: 'power2.inOut' }, wetStart(L, i) - 1);
+      // the last two stops wait a little, so the first tags are read before they rise under the header
+      const camAt = wetStart(L, i) - 1 + (i >= 3 ? 4 : 0);
+      tl.fromTo(S, { focus: prev }, { focus: L.focus[i], duration: 3.6, ease: 'power2.inOut' }, camAt);
+      // a tag that would otherwise ride up under the header lets go as the camera moves two terraces past it
+      const gone = i - 3;
+      if (gone >= 0 && i < L.terraces.length - 1) tl.fromTo($(`[data-tag="${gone}"]`), { opacity: 1 }, { opacity: 0, duration: 1.2, ease: 'power1.in' }, camAt + 0.2);
     });
   }
 

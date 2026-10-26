@@ -109,7 +109,7 @@ export function createScene(frame: HTMLElement, stage: HTMLElement, L: Layout, S
       m.f = Math.min(m.W / L.w, m.H / L.fitH);
       m.sx = (m.W - L.w * m.f) / 2;
       m.vhd = m.H / m.f;
-      m.camEnd = Math.max(0, L.camEnd(m.vhd));
+      m.camEnd = Math.max(0, L.camEnd(m.vhd, m.f));
     } else {
       m.f = m.W / L.w;
       m.sx = 0;

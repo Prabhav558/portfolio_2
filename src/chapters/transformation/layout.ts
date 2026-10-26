@@ -72,12 +72,13 @@ export interface Layout {
   sprouts: SproutCfg[];
   steps: { mode: 'column' | 'slot'; x: number; y: number; w: number };
   /** the camera's last position for a viewport of vhd design units */
-  camEnd: (vhd: number) => number;
+  camEnd: (vhd: number, f: number) => number;
   /** camera focus (world y at mid view) for each terrace while the garden grows */
   focus: number[];
 }
 
 const SOIL_MIN = 150;
+const clampN = (v: number, a: number, b: number) => Math.min(b, Math.max(a, v));
 
 type V = [number, number];
 const lerp = (p: V, q: V, t: number): V => [p[0] + (q[0] - p[0]) * t, p[1] + (q[1] - p[1]) * t];
@@ -230,8 +231,10 @@ function makeMob(): Layout {
     terraces,
     sprouts,
     steps: { mode: 'slot', x: 20, y: 284, w: 410 },
-    camEnd: (vhd) => lastY + face + 40 - vhd,
-    focus: terraces.map((t) => t.y - 150),
+    // last stop: nudged so the second terrace's tag clears the fixed header block (about 178px) on short phones too
+    camEnd: (vhd, f) => lastY + face + 40 - vhd - clampN(765 - vhd + 178 / f, 0, 100),
+    // the current terrace sits low in the frame (about 78% down) so the tags of the two terraces above it stay clear of the header
+    focus: terraces.map((t) => t.y - 273),
   };
 }
 

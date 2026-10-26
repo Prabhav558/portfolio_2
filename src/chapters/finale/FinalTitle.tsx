@@ -240,6 +240,7 @@ export default function FinalTitle() {
       className={`chapter ${styles.root}`}
       tabIndex={-1}
       aria-labelledby="finale-title"
+      data-cursor-label={'Say\nhello'}
     >
       <div className={styles.back} aria-hidden="true">
         {SHARDS.filter((s) => s.layer === 'back').map(frag)}
