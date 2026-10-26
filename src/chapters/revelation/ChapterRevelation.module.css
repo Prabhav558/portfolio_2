@@ -1,0 +1,555 @@
+/* Chapter V: experience. Default state = composed face + timeline + credentials (reduced motion shows this). */
+.root {
+  background: var(--black);
+  color: var(--cream);
+}
+
+.stage {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  overflow: hidden;
+}
+.camera {
+  position: absolute;
+  inset: 0;
+  will-change: transform;
+}
+.camera svg {
+  display: block;
+  width: 100%;
+  height: 100%;
+  max-width: none;
+}
+
+/* faint paper scan-line smear at the top edge */
+.smear {
+  --raster-w: 6px;
+  --raster-fill: 0.4;
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  height: 9svh;
+  z-index: 3;
+  background: var(--cream);
+  opacity: 0.55;
+  pointer-events: none;
+}
+
+.folio {
+  position: absolute;
+  z-index: 7;
+  top: calc(var(--nav-h) + 16px);
+  left: var(--gutter);
+  margin: 0;
+  color: var(--cream);
+  text-shadow: 1px 1px 0 var(--black);
+}
+
+section .cap {
+  left: var(--gutter);
+  bottom: clamp(24px, 7svh, 72px);
+  z-index: 7;
+  margin: 0;
+}
+
+/* the timeline panel: burst backdrop + scrolling track */
+.body {
+  position: absolute;
+  inset: 0;
+  z-index: 4;
+  background: var(--black);
+}
+.burst {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+}
+.burst > svg {
+  display: block;
+  width: 100%;
+  height: 100%;
+  max-width: none;
+}
+.viewport {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+}
+.track {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  padding: 0 var(--gutter);
+  will-change: transform;
+}
+.rows {
+  --gap: clamp(36px, 7svh, 72px);
+  --node-top: 40px;
+  --rail: 150px;
+  --node-x: 110px;
+  max-width: 1260px;
+  margin: 0 auto;
+}
+.row {
+  position: relative;
+  display: grid;
+  grid-template-columns: var(--rail) minmax(0, 1fr);
+  margin-bottom: var(--gap);
+}
+.row:last-child {
+  margin-bottom: 0;
+}
+
+/* engraved timeline rail */
+.rail {
+  position: relative;
+}
+.node {
+  position: absolute;
+  top: var(--node-top);
+  left: var(--node-x);
+  width: 22px;
+  height: 22px;
+  margin: -11px 0 0 -11px;
+  background: var(--cream);
+  border: 3px solid var(--black);
+  outline: 2px solid var(--latte);
+  outline-offset: 1px;
+  transform: rotate(45deg);
+}
+.date {
+  position: absolute;
+  top: var(--node-top);
+  right: calc(100% - var(--node-x) + 26px);
+  width: max-content;
+  margin-top: -0.55em;
+  text-align: right;
+  color: var(--cream);
+  padding: 3px 6px 2px;
+  background: var(--black);
+  white-space: nowrap;
+}
+.seg {
+  position: absolute;
+  left: var(--node-x);
+  top: var(--node-top);
+  bottom: calc(-1 * (var(--gap) + var(--node-top)));
+  width: 8px;
+  margin-left: -4px;
+  background: repeating-linear-gradient(180deg, var(--latte) 0 6px, var(--black) 6px 8px);
+  border-left: 2px solid var(--black);
+  border-right: 2px solid var(--black);
+  transform-origin: 50% 0;
+}
+
+/* editorial card */
+.card {
+  position: relative;
+  min-width: 0;
+}
+.card::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  transform: translate(11px, 11px);
+  background: var(--burgundy);
+  border: 2px solid var(--black);
+}
+.cardBody {
+  position: relative;
+  background: var(--ink);
+  border: 2px solid var(--cream);
+  padding: clamp(22px, 3.4svh, 38px) clamp(22px, 3vw, 44px) clamp(24px, 3.6svh, 40px);
+}
+.tag {
+  margin: 0 0 6px;
+  color: var(--latte);
+}
+.org {
+  margin: 0;
+  font-family: var(--font-display);
+  font-weight: 500;
+  font-style: italic;
+  font-size: clamp(2.3rem, 5.2vw, 5rem);
+  line-height: 0.98;
+  letter-spacing: -0.02em;
+  color: var(--cream);
+}
+.meta {
+  margin: 14px 0 0;
+  padding: 10px 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px 22px;
+  font-family: var(--font-mono);
+  font-size: var(--fs-small);
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--cream);
+  border-top: 2px solid var(--cream);
+  border-bottom: 1px solid var(--latte);
+}
+.roleName {
+  color: var(--latte);
+  font-weight: 700;
+}
+.bullets {
+  list-style: none;
+  margin: 14px 0 0;
+  padding: 0;
+  display: grid;
+  gap: 0;
+}
+.bullets li {
+  position: relative;
+  padding: 9px 0 9px 26px;
+  font-family: var(--font-sans);
+  font-size: clamp(0.88rem, 1.08vw, 1.04rem);
+  line-height: 1.5;
+  color: var(--cream);
+  border-top: 1px solid rgba(183, 168, 154, 0.35);
+}
+.bullets li:first-child {
+  border-top: 0;
+}
+.bullets li::before {
+  content: '';
+  position: absolute;
+  left: 4px;
+  top: 1.05em;
+  width: 8px;
+  height: 8px;
+  background: var(--latte);
+  transform: rotate(45deg);
+}
+
+/* credentials block */
+.credsBody {
+  display: grid;
+  grid-template-columns: 1.15fr 1.35fr 0.85fr;
+  gap: clamp(20px, 3vw, 44px);
+}
+.col {
+  min-width: 0;
+}
+.colHead {
+  margin: 0 0 12px;
+  padding-bottom: 8px;
+  color: var(--latte);
+  border-bottom: 2px solid var(--cream);
+}
+.degree {
+  margin: 0;
+  font-family: var(--font-display);
+  font-size: clamp(1.15rem, 1.9vw, 1.7rem);
+  line-height: 1.1;
+}
+.school {
+  margin: 6px 0 0;
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  color: var(--latte);
+  line-height: 1.5;
+}
+.score {
+  margin: 10px 0 0;
+  font-family: var(--font-display);
+  font-style: italic;
+  font-size: clamp(1.5rem, 2.6vw, 2.4rem);
+  line-height: 1;
+  color: var(--cream);
+}
+.score span {
+  display: block;
+  margin-top: 6px;
+  font-family: var(--font-mono);
+  font-style: normal;
+  font-size: 0.78rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--latte);
+}
+.schools {
+  list-style: none;
+  margin: 14px 0 0;
+  padding: 0;
+  display: grid;
+  gap: 8px;
+}
+.schools li {
+  display: grid;
+  gap: 1px;
+  padding-top: 8px;
+  border-top: 1px solid rgba(183, 168, 154, 0.4);
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+  letter-spacing: 0.04em;
+  line-height: 1.45;
+  color: var(--latte);
+}
+.schools li span:first-child {
+  color: var(--cream);
+}
+.seals {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 14px 16px;
+}
+.seals li {
+  display: grid;
+  grid-template-columns: 58px minmax(0, 1fr);
+  gap: 10px;
+  align-items: center;
+}
+.sealArt {
+  display: block;
+  width: 58px;
+}
+.sealArt svg {
+  width: 100%;
+  height: auto;
+  overflow: visible;
+}
+.sealName {
+  font-family: var(--font-sans);
+  font-size: 0.8rem;
+  line-height: 1.35;
+  color: var(--cream);
+}
+.awards {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  gap: 16px;
+}
+.awards li {
+  position: relative;
+  padding-left: 40px;
+  display: grid;
+  gap: 3px;
+}
+.awards svg {
+  position: absolute;
+  left: 0;
+  top: 2px;
+  width: 28px;
+  height: 28px;
+  fill: var(--latte);
+  stroke: var(--cream);
+  stroke-width: 1.2;
+  stroke-linejoin: round;
+}
+.awardTitle {
+  font-family: var(--font-display);
+  font-style: italic;
+  font-size: clamp(1.15rem, 1.7vw, 1.55rem);
+  line-height: 1.1;
+}
+.awardMeta {
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  line-height: 1.45;
+  color: var(--latte);
+}
+
+/* the hand-off: a burgundy iris with an ink rim */
+.ring,
+.red {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  clip-path: circle(0% at 50% 50%);
+}
+.ring {
+  z-index: 8;
+  background: var(--black);
+}
+.red {
+  z-index: 9;
+  background: var(--burgundy);
+}
+
+@media (max-width: 768px) {
+  .rows {
+    --rail: 30px;
+    --node-x: 14px;
+    --node-top: 26px;
+    --gap: 30px;
+  }
+  .node {
+    width: 16px;
+    height: 16px;
+    margin: -8px 0 0 -8px;
+    border-width: 2px;
+  }
+  .seg {
+    width: 6px;
+    margin-left: -3px;
+  }
+  .date {
+    display: none;
+  }
+  .card::before {
+    transform: translate(7px, 7px);
+  }
+  .cardBody {
+    padding: 16px 16px 14px;
+  }
+  .org {
+    font-size: clamp(1.9rem, 9.6vw, 2.6rem);
+  }
+  .meta {
+    margin-top: 10px;
+    padding: 8px 0;
+    gap: 2px 14px;
+    font-size: 0.66rem;
+  }
+  .bullets {
+    margin-top: 6px;
+  }
+  .bullets li {
+    padding: 6px 0 6px 20px;
+    font-size: 0.8rem;
+    line-height: 1.42;
+  }
+  .bullets li::before {
+    left: 2px;
+    width: 7px;
+    height: 7px;
+  }
+  .credsBody {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+  .colHead {
+    margin-bottom: 8px;
+    padding-bottom: 6px;
+  }
+  .seals {
+    gap: 10px 10px;
+  }
+  .seals li {
+    grid-template-columns: 38px minmax(0, 1fr);
+    gap: 8px;
+  }
+  .sealArt {
+    width: 38px;
+  }
+  .sealName {
+    font-size: 0.7rem;
+    line-height: 1.3;
+  }
+  .awards {
+    gap: 10px;
+  }
+  .awards li {
+    padding-left: 34px;
+  }
+  .awards svg {
+    width: 22px;
+    height: 22px;
+  }
+  .score {
+    margin-top: 6px;
+  }
+  .schools {
+    margin-top: 8px;
+    gap: 5px;
+  }
+  .schools li {
+    padding-top: 5px;
+  }
+  section .cap {
+    bottom: 5svh;
+    max-width: min(30ch, 86vw);
+  }
+}
+
+/* ---------- reduced motion: static flow ---------- */
+@media (prefers-reduced-motion: reduce) {
+  section.root {
+    height: auto;
+    overflow: visible;
+    display: flex;
+    flex-direction: column;
+  }
+  .stage {
+    position: relative;
+    inset: auto;
+    height: 82svh;
+    clip-path: none;
+  }
+  .smear,
+  .ring,
+  .red {
+    display: none;
+  }
+  section .cap {
+    top: calc(82svh - 6rem);
+    bottom: auto;
+  }
+  .body {
+    position: relative;
+    inset: auto;
+    clip-path: none;
+  }
+  .viewport {
+    position: relative;
+    inset: auto;
+    overflow: visible;
+  }
+  .track {
+    position: relative;
+    transform: none;
+    padding-top: 10svh;
+    padding-bottom: 12svh;
+  }
+}
+:global(:root.calm) section.root {
+  height: auto;
+  overflow: visible;
+  display: flex;
+  flex-direction: column;
+}
+:global(:root.calm) .stage {
+  position: relative;
+  inset: auto;
+  height: 82svh;
+  clip-path: none;
+}
+:global(:root.calm) .smear,
+:global(:root.calm) .ring,
+:global(:root.calm) .red {
+  display: none;
+}
+:global(:root.calm) section .cap {
+  top: calc(82svh - 6rem);
+  bottom: auto;
+}
+:global(:root.calm) .body {
+  position: relative;
+  inset: auto;
+  clip-path: none;
+}
+:global(:root.calm) .viewport {
+  position: relative;
+  inset: auto;
+  overflow: visible;
+}
+:global(:root.calm) .track {
+  position: relative;
+  transform: none;
+  padding-top: 10svh;
+  padding-bottom: 12svh;
+}

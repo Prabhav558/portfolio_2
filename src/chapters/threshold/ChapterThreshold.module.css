@@ -1,0 +1,267 @@
+/* Burgundy hall behind the printed plate; fine vertical scan-lines in the ground */
+.root {
+  background-color: var(--burgundy);
+  background-image: repeating-linear-gradient(90deg, rgba(5, 5, 5, 0.22) 0 1.5px, transparent 1.5px 7px);
+  color: var(--ink);
+}
+
+/* the engraved plate: full-bleed at rest, it steps back to the left while the About panel reads */
+.world {
+  position: absolute;
+  inset: 0;
+  background: var(--paper);
+  z-index: 1;
+  overflow: hidden;
+  outline: 3px solid var(--black);
+  box-shadow: 10px 10px 0 3px var(--black);
+  transform-origin: var(--ox, 50%) var(--oy, 54%);
+}
+
+.layer {
+  position: absolute;
+  inset: 0;
+}
+.layer > svg {
+  width: 100%;
+  height: 100%;
+}
+
+.red {
+  z-index: 2;
+  opacity: 0;
+  pointer-events: none;
+}
+
+.folio {
+  position: absolute;
+  z-index: var(--z-caption);
+  top: calc(var(--nav-h) + 14px);
+  left: var(--gutter);
+  margin: 0;
+  color: var(--ink);
+  pointer-events: none;
+}
+
+.caption {
+  left: var(--gutter);
+  bottom: clamp(20px, 5vh, 48px);
+  pointer-events: none;
+}
+
+/* ---- About panel: cream editorial sheet, printed ---- */
+.panel {
+  position: absolute;
+  z-index: 4;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  width: min(46vw, 780px);
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: clamp(10px, 1.9vh, 18px);
+  padding: calc(var(--nav-h) + clamp(14px, 3vh, 34px)) 68px clamp(18px, 3.4vh, 36px) clamp(26px, 3.6vw, 60px);
+  background: var(--paper);
+  color: var(--ink);
+  border-left: 3px solid var(--black);
+  box-shadow: -10px 0 0 var(--black);
+  overflow: hidden;
+}
+.panel::before {
+  /* second hairline, engraved-plate style */
+  content: '';
+  position: absolute;
+  inset: 0 auto 0 6px;
+  width: 0;
+  border-left: 1px solid var(--black);
+  pointer-events: none;
+}
+
+.head {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 16px;
+  padding-bottom: clamp(8px, 1.4vh, 14px);
+  border-bottom: 1.5px solid var(--black);
+}
+.heading {
+  margin: 0;
+  font-size: clamp(2.3rem, 8vh, 4.8rem);
+  font-weight: 500;
+  color: var(--ink);
+}
+.heading em {
+  font-style: italic;
+  color: var(--burgundy);
+}
+.role {
+  margin: 0 0 0.5em;
+  text-align: right;
+  color: var(--burgundy);
+  max-width: 18ch;
+  line-height: 1.5;
+}
+
+.bio {
+  margin: 0;
+  max-width: 60ch;
+  font-family: var(--font-sans);
+  font-size: clamp(0.84rem, 1.78vh, 1.02rem);
+  line-height: 1.58;
+}
+.lead {
+  font-family: var(--font-display);
+  font-size: clamp(1rem, 2.45vh, 1.34rem);
+  line-height: 1.38;
+  font-weight: 500;
+}
+
+.meta {
+  margin: 0;
+  display: grid;
+  grid-template-columns: auto 1fr;
+  column-gap: 18px;
+  row-gap: 6px;
+  padding: clamp(8px, 1.3vh, 12px) 0;
+  border-top: 1px solid var(--black);
+  border-bottom: 1px solid var(--black);
+  font-family: var(--font-sans);
+  font-size: clamp(0.8rem, 1.66vh, 0.95rem);
+  line-height: 1.4;
+}
+.meta dt {
+  font-family: var(--font-mono);
+  font-size: var(--fs-micro);
+  letter-spacing: var(--track-wide);
+  text-transform: uppercase;
+  color: var(--burgundy);
+  padding-top: 0.28em;
+}
+.meta dd {
+  margin: 0;
+}
+
+.stats {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+}
+.stat {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  padding: 0 clamp(10px, 1.6vw, 22px);
+  border-left: 1.5px solid var(--black);
+}
+.stat:first-child {
+  padding-left: 0;
+  border-left: 0;
+}
+.num {
+  font-family: var(--font-display);
+  font-weight: 500;
+  font-size: clamp(2.2rem, 7.4vh, 4.2rem);
+  line-height: 0.95;
+  letter-spacing: -0.02em;
+  color: var(--ink);
+}
+.bar {
+  display: block;
+  height: 5px;
+  width: 100%;
+  max-width: 64px;
+  background: repeating-linear-gradient(90deg, var(--burgundy) 0 2px, transparent 2px 4px);
+}
+.statLabel {
+  font-family: var(--font-mono);
+  font-size: var(--fs-micro);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  line-height: 1.5;
+}
+
+/* reduced / calm: the composed hold state is the final state; no pin, no scrub */
+@media (prefers-reduced-motion: reduce) {
+  .world {
+    transform: translate(var(--hx, 0px), var(--hy, 0px)) scale(var(--hs, 1));
+  }
+  .raster {
+    -webkit-mask-image: none;
+    mask-image: none;
+  }
+}
+:root.calm .world {
+  transform: translate(var(--hx, 0px), var(--hy, 0px)) scale(var(--hs, 1));
+}
+
+@media (max-width: 768px) {
+  .root .caption {
+    bottom: auto;
+    top: calc(40svh - 22px);
+    max-width: calc(100vw - 2 * var(--gutter) - 6px);
+  }
+  .folio {
+    display: none;
+  }
+  .panel {
+    top: 40svh;
+    left: 0;
+    width: auto;
+    justify-content: flex-start;
+    gap: 8px;
+    padding: 34px var(--gutter) 12px;
+    border-left: 0;
+    border-top: 3px solid var(--black);
+    box-shadow: 0 -8px 0 var(--black);
+  }
+  .panel::before {
+    inset: 6px 0 auto 0;
+    border-left: 0;
+    border-top: 1px solid var(--black);
+  }
+  .head {
+    padding-bottom: 6px;
+  }
+  .heading {
+    font-size: clamp(2rem, 5.6svh, 2.6rem);
+  }
+  .role {
+    max-width: 22ch;
+    margin-bottom: 0.3em;
+  }
+  .bio {
+    font-size: clamp(0.74rem, 1.5svh, 0.84rem);
+    line-height: 1.46;
+  }
+  .lead {
+    font-family: var(--font-sans);
+    font-size: clamp(0.74rem, 1.5svh, 0.84rem);
+    line-height: 1.46;
+    font-weight: 400;
+  }
+  .meta {
+    column-gap: 12px;
+    row-gap: 2px;
+    padding: 6px 0;
+    font-size: 0.78rem;
+  }
+  .stat {
+    gap: 3px;
+    padding: 0 10px;
+  }
+  .num {
+    font-size: clamp(1.7rem, 5svh, 2.3rem);
+  }
+  .bar {
+    height: 4px;
+    max-width: 44px;
+  }
+  .statLabel {
+    font-size: 0.58rem;
+    letter-spacing: 0.06em;
+  }
+}
