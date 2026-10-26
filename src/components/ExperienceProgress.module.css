@@ -1,0 +1,68 @@
+.rail {
+  position: fixed;
+  right: calc(var(--gutter) - 4px);
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: var(--z-nav);
+  color: var(--ink);
+  background: var(--paper);
+  padding: 8px 0;
+  box-shadow: 2px 2px 0 var(--black);
+}
+.track {
+  position: absolute;
+  left: 50%;
+  top: 12px;
+  bottom: 12px;
+  width: 1px;
+  background: rgba(17, 17, 17, 0.2);
+}
+.fill {
+  position: absolute;
+  inset: 0;
+  background: var(--red);
+  transform-origin: top;
+  transform: scaleY(0);
+}
+.list { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 6px; }
+.tick {
+  position: relative;
+  display: grid;
+  place-items: center;
+  width: 20px;
+  height: 18px;
+}
+.tick::after {
+  content: "";
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  border: 1px solid var(--ink);
+  background: var(--paper);
+  transition: transform 0.35s var(--ease-out), background 0.3s;
+}
+.active::after { background: var(--red); border-color: var(--red); transform: scale(1.5); }
+
+/* Numeral appears as a small paper label on hover / focus */
+.num {
+  position: absolute;
+  right: calc(100% + 8px);
+  top: 50%;
+  translate: 0 -50%;
+  padding: 3px 7px;
+  background: var(--paper);
+  box-shadow: 2px 2px 0 var(--black);
+  font-family: var(--font-mono);
+  font-size: 0.62rem;
+  letter-spacing: 0.1em;
+  white-space: nowrap;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.2s;
+}
+.tick:hover .num,
+.tick:focus-visible .num { opacity: 1; }
+
+@media (max-width: 768px) {
+  .rail { display: none; }
+}

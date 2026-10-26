@@ -1,0 +1,67 @@
+.cursor {
+  position: fixed;
+  left: 0;
+  top: 0;
+  z-index: var(--z-cursor);
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 0.3s;
+  will-change: transform;
+}
+.visible { opacity: 1; }
+
+.ring {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 14px;
+  height: 14px;
+  translate: -50% -50%;
+  border-radius: 50%;
+  background: var(--paper);
+  border: 1.5px solid var(--black);
+  box-shadow: 0 0 0 1px rgba(232, 220, 198, 0.35);
+  display: grid;
+  place-items: center;
+  transition:
+    width 0.45s var(--ease-out),
+    height 0.45s var(--ease-out),
+    background 0.3s,
+    scale 0.3s var(--ease-out);
+}
+
+.text {
+  font-family: var(--font-sans);
+  font-size: 0.6rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  line-height: 1.15;
+  text-transform: uppercase;
+  text-align: center;
+  color: var(--ink);
+  padding: 0 8px;
+  opacity: 0;
+  transition: opacity 0.2s;
+  white-space: pre-line;
+}
+
+.hover .ring {
+  width: 44px;
+  height: 44px;
+  background: transparent;
+  border-color: var(--paper);
+  box-shadow: 0 0 0 1.5px var(--black);
+}
+
+.label .ring { width: 86px; height: 86px; border-width: 2px; }
+.label .text { opacity: 1; transition-delay: 0.12s; }
+
+.pressed .ring { scale: 0.86; }
+.label.pressed .ring { scale: 0.92; background: var(--blue); }
+.label.pressed .text { color: var(--paper); }
+
+@media (prefers-reduced-motion: reduce) {
+  .ring { transition: none; }
+}
+
+:global(:root.calm) .ring { transition: none; }

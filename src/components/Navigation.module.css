@@ -1,0 +1,143 @@
+.nav {
+  position: fixed;
+  inset: 0 0 auto 0;
+  z-index: var(--z-nav);
+  height: var(--nav-h);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 var(--gutter);
+  pointer-events: none;
+}
+.nav > * { pointer-events: auto; }
+
+.brand {
+  color: var(--ink);
+  background: var(--paper);
+  padding: 9px 14px 8px;
+  box-shadow: 3px 3px 0 var(--black);
+  transition: color 0.25s;
+}
+.brand:hover { color: var(--red); }
+
+.tab {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  background: var(--paper);
+  color: var(--ink);
+  padding: 7px 8px 7px 14px;
+  box-shadow: 3px 3px 0 var(--black);
+  font-family: var(--font-sans);
+  font-size: var(--fs-micro);
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+.chapter { display: flex; gap: 10px; align-items: baseline; min-width: 0; }
+.numeral { font-family: var(--font-mono); font-weight: 500; color: var(--red); min-width: 2.2em; }
+.chapterLabel { white-space: nowrap; }
+.pill {
+  width: 26px;
+  height: 10px;
+  border-radius: 5px;
+  background: var(--red);
+  box-shadow: inset 0 0 0 1.5px var(--black);
+}
+.resume {
+  color: var(--ink);
+  text-decoration: none;
+  border-bottom: 1.5px solid var(--red);
+  padding: 2px 0 1px;
+  transition: color 0.2s;
+}
+.resume:hover { color: var(--red); }
+.calm {
+  border: 1.5px solid var(--black);
+  padding: 4px 8px;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  font-size: var(--fs-micro);
+  transition: background 0.2s, color 0.2s;
+}
+.calm:hover { background: rgba(17, 17, 17, 0.08); }
+.calmOn { background: var(--red); color: var(--paper); border-color: var(--red); }
+.calmOn:hover { background: var(--red-deep); }
+.menuBtn {
+  background: var(--black);
+  color: var(--paper);
+  padding: 6px 10px;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  font-size: var(--fs-micro);
+  transition: background 0.25s var(--ease-out);
+}
+.menuBtn:hover { background: var(--red); }
+
+.menu {
+  position: fixed;
+  top: calc(var(--nav-h) + 4px);
+  right: var(--gutter);
+  z-index: var(--z-menu);
+  width: min(360px, calc(100vw - 2 * var(--gutter)));
+  background: var(--paper);
+  color: var(--ink);
+  padding: 18px 20px 16px;
+  box-shadow: 5px 5px 0 var(--black);
+  border: 1.5px solid var(--black);
+  clip-path: inset(0 0 100% 0);
+  transition: clip-path 0.45s var(--ease-inout);
+}
+.menuOpen { clip-path: inset(0 0 0 0); }
+.menuKicker { color: var(--red); margin: 0 0 10px; }
+.list { list-style: none; margin: 0; padding: 0; }
+.item {
+  display: grid;
+  grid-template-columns: 3em 1fr;
+  align-items: baseline;
+  width: 100%;
+  text-align: left;
+  padding: 9px 0;
+  border-top: 1px solid rgba(17, 17, 17, 0.18);
+  transition: color 0.2s, padding 0.3s var(--ease-out);
+}
+.item:hover { color: var(--red); padding-left: 6px; }
+.itemActive { color: var(--red); }
+.itemTitle { font-family: var(--font-display); font-size: 1.45rem; line-height: 1.1; }
+.menuFoot { margin: 12px 0 0; color: var(--gray); }
+
+@media (max-width: 768px) {
+  .nav { --nav-h: 56px; }
+  .chapterLabel { display: none; }
+  .pill { display: none; }
+  .tab { gap: 8px; padding-left: 10px; }
+  .numeral { min-width: auto; }
+  .chapter { display: none; }
+  .tab { gap: 10px; padding: 6px 6px 6px 10px; letter-spacing: 0.08em; }
+  .calm { padding: 3px 6px; }
+  .menuBtn { padding: 5px 8px; }
+}
+
+@media (max-width: 400px) {
+  .brand { padding: 8px 9px 7px; }
+  .brand > span { font-size: 0.95rem; }
+}
+
+@media (max-width: 340px) {
+  .nav { padding: 0 10px; }
+  .brand { padding: 8px 7px 7px; }
+  .brand > span { font-size: 0.85rem; }
+  .tab { gap: 6px; padding: 6px 4px 6px 7px; letter-spacing: 0.04em; }
+  .calm { padding: 3px 4px; }
+  .menuBtn { padding: 5px 6px; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .menu { transition: none; }
+}
+:root.calm .menu { transition: none; }
+
+/* Nav pieces sit on cream paper: use burgundy for the focus ring there */
+.brand:focus-visible, .tab :focus-visible, .menu :focus-visible { outline-color: var(--burgundy); }
