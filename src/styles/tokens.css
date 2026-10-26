@@ -1,0 +1,52 @@
+:root {
+  /* Palette: deep burgundy, mocha cream, cosmic latte + ink.
+     Legacy names are kept so existing modules keep working:
+     --red = burgundy, --paper = mocha cream, --gray/--blue = cosmic latte. */
+  --burgundy: #722F37;
+  --burgundy-deep: #4A1D23; /* shade of burgundy for woodgrain + shadows */
+  --cream: #E8DCC6;
+  --latte: #B7A89A;
+  --accent: var(--latte); /* narrative accent (was electric blue) */
+
+  --red: var(--burgundy);
+  --red-deep: var(--burgundy-deep);
+  --ink: #111111;
+  --black: #050505;
+  --paper: var(--cream);
+  --gray: var(--latte);
+  --blue: var(--accent);
+
+  /* Type */
+  --font-display: 'Bodoni Moda', 'Didot', 'Bodoni 72', Georgia, serif;
+  --font-sans: 'Archivo', 'Helvetica Neue', Arial, sans-serif;
+  --font-mono: 'JetBrains Mono', ui-monospace, 'SFMono-Regular', Menlo, monospace;
+
+  --fs-mega: clamp(4rem, 16vw, 17rem);
+  --fs-display: clamp(3rem, 9vw, 9rem);
+  --fs-h1: clamp(2.25rem, 5.5vw, 5.5rem);
+  --fs-h2: clamp(1.6rem, 3.2vw, 3.2rem);
+  --fs-body: clamp(0.95rem, 1.05vw, 1.1rem);
+  --fs-small: 0.78rem;
+  --fs-micro: 0.66rem;
+
+  --track-wide: 0.18em;
+  --track-mega: -0.02em;
+
+  /* Layout */
+  --gutter: clamp(16px, 3vw, 40px);
+  --nav-h: 64px;
+  --ease-out: cubic-bezier(0.22, 1, 0.36, 1);
+  --ease-inout: cubic-bezier(0.65, 0, 0.35, 1);
+
+  /* Raster transition defaults */
+  --raster-fill: 1;
+  --raster-w: 7px;
+
+  /* Layers */
+  --z-scene: 1;
+  --z-caption: 10;
+  --z-grain: 900;
+  --z-nav: 1000;
+  --z-menu: 1100;
+  --z-cursor: 2000;
+}

@@ -1,0 +1,11 @@
+node_modules/
+dist/
+*.tsbuildinfo
+.DS_Store
+
+# reference captures (not my work)
+references/
+
+# resume kept out of the repo for now
+Resume.pdf
+public/Prabhav-Singh-Resume.pdf
