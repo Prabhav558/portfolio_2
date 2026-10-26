@@ -2,6 +2,8 @@
 
 My personal portfolio, built as an engraved, art-book style site told in six scroll-driven chapters. The look is a woodcut / engraving treatment in a burgundy, mocha cream and cosmic latte palette, with Bodoni Moda for display type. All illustration is generated as SVG in code; there are no raster images in the artwork.
 
+Live: https://prabhav558.github.io/portfolio_2/
+
 Repository: [github.com/Prabhav558/portfolio_2](https://github.com/Prabhav558/portfolio_2)
 
 ## Highlights

@@ -115,7 +115,7 @@ export const person: Person = {
   email: 'ps9681@srmist.edu.in',
   github,
   linkedin: 'https://www.linkedin.com/in/prabhav-singh-7a4285208',
-  resumeUrl: '/Prabhav-Singh-Resume.pdf',
+  resumeUrl: `${import.meta.env.BASE_URL}Prabhav-Singh-Resume.pdf`,
   availability: 'Open to internships and full-time roles from 2027',
   motto: 'FACTA NON VERBA',
   portrait: null,
