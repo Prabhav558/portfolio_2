@@ -136,13 +136,34 @@
   .brand > span { font-size: 0.95rem; }
 }
 
-@media (max-width: 340px) {
-  .nav { padding: 0 10px; }
+/* phones: the theme toggle must not push INDEX off-screen */
+@media (max-width: 480px) {
+  .tab { gap: 6px; letter-spacing: 0.06em; }
+  .theme { width: 22px; height: 22px; }
+  .theme svg { width: 12px; height: 12px; }
+  .calm { padding: 3px 5px; }
+  .brand { padding: 8px 8px 7px; }
+}
+
+@media (max-width: 400px) {
+  .nav { padding: 0 12px; }
   .brand { padding: 8px 7px 7px; }
-  .brand > span { font-size: 0.85rem; }
-  .tab { gap: 6px; padding: 6px 4px 6px 7px; letter-spacing: 0.04em; }
-  .calm { padding: 3px 4px; }
-  .menuBtn { padding: 5px 6px; }
+  .brand > span { font-size: 0.82rem; }
+  .tab { gap: 5px; padding: 6px 4px 6px 8px; font-size: 0.6rem; letter-spacing: 0.03em; }
+  .theme { width: 20px; height: 20px; }
+  .theme svg { width: 11px; height: 11px; }
+  .calm { padding: 3px 4px; font-size: 0.6rem; }
+  .menuBtn { padding: 5px 6px; font-size: 0.6rem; }
+}
+
+@media (max-width: 340px) {
+  .nav { padding: 0 8px; }
+  .brand { padding: 7px 5px 6px; }
+  .brand > span { font-size: 0.72rem; }
+  .tab { gap: 4px; padding: 5px 3px 5px 5px; letter-spacing: 0.02em; }
+  .theme { width: 18px; height: 18px; }
+  .calm { padding: 2px 3px; }
+  .menuBtn { padding: 4px 5px; }
 }
 
 @media (prefers-reduced-motion: reduce) {
