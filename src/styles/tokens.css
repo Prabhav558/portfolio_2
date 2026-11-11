@@ -10,6 +10,7 @@
   --latte: #B7A89A;
   --accent: var(--latte); /* narrative accent (was electric blue) */
   --accent-text: var(--latte); /* accent used as TEXT on the ground (light theme needs a darker one) */
+  --accent-on-paper: var(--latte); /* accent used as text on a paper (cream / espresso) box */
 
   --red: var(--burgundy);
   --red-deep: var(--burgundy-deep);
@@ -56,20 +57,21 @@
 
 /* LIGHT THEME: the whole light palette lives in this one block.
    Dark (above) is the original palette and is untouched.
-   Every colour in the site reads these six tokens, so swapping a value here
+   Every colour in the site reads these tokens, so swapping a value here
    re-skins the engraved art, the UI and the case studies together.
-   Palette: Deep Midnight Teal #0B3048, Soft Pearl #F2F0E9, Neon Lime #B9F12F.
-   Roles are inverted relative to dark: ground and hard line go pearl, paper
-   fills and text go teal, the old burgundy grounds become slightly deeper pearls, and
-   lime takes the accent role. Lime is for fills and for text ON teal only;
-   on pearl it has no contrast. */
+   Palette: Cream Lemon #FBF5D9, Espresso Brown #2B1A12, Burnt Orange #CC5500.
+   Roles are inverted relative to dark: ground and hard line go cream lemon,
+   paper fills and text go espresso, the old burgundy grounds become slightly
+   deeper lemons, and burnt orange takes the accent role. Orange is for fills;
+   as text it needs --accent-text on the ground, --accent-on-paper on espresso. */
 :root[data-theme='light'] {
   color-scheme: light;
-  --black: #F2F0E9;        /* ground + hard ink line (dark: #050505) */
-  --ink: #FAF9F5;          /* raised card / text-on-paper (dark: #111111) */
-  --cream: #0B3048;        /* paper fill + text on ground (dark: #E8DCC6) */
-  --latte: #B9F12F;        /* narrative accent: fills, and text ON teal (dark: #B7A89A) */
-  --accent-text: #4F7300;  /* accent as text on pearl: darkened lime, 5:1 (dark: = latte) */
-  --burgundy: #EBE8DF;     /* ground / fill / accent (dark: #722F37) */
-  --burgundy-deep: #DEDACB; /* shade on burgundy (dark: #4A1D23) */
+  --black: #FBF5D9;        /* ground + hard ink line (dark: #050505) */
+  --ink: #FFFCEE;          /* raised card / text-on-paper (dark: #111111) */
+  --cream: #2B1A12;        /* paper fill + text on ground (dark: #E8DCC6) */
+  --latte: #CC5500;        /* accent fills (dark: #B7A89A) */
+  --accent-text: #B04700;  /* accent as text on cream lemon, 5:1 (dark: = latte) */
+  --accent-on-paper: #F08A3C; /* accent as text on espresso, 6:1 (dark: = latte) */
+  --burgundy: #F4ECC6;     /* ground / fill / accent (dark: #722F37) */
+  --burgundy-deep: #EAE0B5; /* shade on burgundy (dark: #4A1D23) */
 }

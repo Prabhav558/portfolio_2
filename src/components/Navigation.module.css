@@ -117,7 +117,7 @@
 .item:hover { color: var(--red); padding-left: 6px; }
 .itemActive { color: var(--red); }
 .itemTitle { font-family: var(--font-display); font-size: 1.45rem; line-height: 1.1; }
-.menuFoot { margin: 12px 0 0; color: var(--gray); }
+.menuFoot { margin: 12px 0 0; color: var(--accent-on-paper); }
 
 @media (max-width: 768px) {
   .nav { --nav-h: 56px; }
