@@ -65,7 +65,7 @@ export default function BottomBand() {
         </clipPath>
       </defs>
       {/* far row: black silhouettes */}
-      <g fill="#050505">
+      <g fill="var(--black)">
         {rear.map((c, i) => (
           <path key={i} d={c.d} />
         ))}
@@ -74,26 +74,26 @@ export default function BottomBand() {
       <g>
         {front.map((c, i) => (
           <g key={i}>
-            <path d={c.d} transform="translate(5 0)" fill="#050505" />
-            <path d={c.d} fill="#E8DCC6" stroke="#050505" strokeWidth="2.2" strokeLinejoin="round" />
+            <path d={c.d} transform="translate(5 0)" fill="var(--black)" />
+            <path d={c.d} fill="var(--cream)" stroke="var(--black)" strokeWidth="2.2" strokeLinejoin="round" />
             <path
               d={`M${c.x + c.w * 0.62} ${c.top + 10} L${c.x + c.w} ${c.top + 4} L${c.x + c.w} ${c.base} L${c.x + c.w * 0.62} ${c.base}Z`}
               fill="url(#hatch-diag)"
             />
             {[0.22, 0.42].map((t) => (
-              <line key={t} x1={c.x + c.w * t} y1={c.top + 16} x2={c.x + c.w * t} y2={c.base} stroke="#050505" strokeWidth="0.9" />
+              <line key={t} x1={c.x + c.w * t} y1={c.top + 16} x2={c.x + c.w * t} y2={c.base} stroke="var(--black)" strokeWidth="0.9" />
             ))}
-            <rect x={c.x - 5} y={c.base - 7} width={c.w + 10} height="9" fill="#E8DCC6" stroke="#050505" strokeWidth="2" />
+            <rect x={c.x - 5} y={c.base - 7} width={c.w + 10} height="9" fill="var(--cream)" stroke="var(--black)" strokeWidth="2" />
           </g>
         ))}
       </g>
       {/* ground */}
-      <path d={ground} fill="#E8DCC6" stroke="#050505" strokeWidth="2.6" strokeLinejoin="round" />
-      <g clipPath="url(#fin-ground-clip)" stroke="#050505" strokeLinecap="round">
+      <path d={ground} fill="var(--cream)" stroke="var(--black)" strokeWidth="2.6" strokeLinejoin="round" />
+      <g clipPath="url(#fin-ground-clip)" stroke="var(--black)" strokeLinecap="round">
         {lines.map((l, i) => (
           <line key={i} x1={l.x1} x2={l.x2} y1={l.y} y2={l.y} strokeWidth={l.w} />
         ))}
-        <rect x="-10" y="252" width="1460" height="12" fill="#050505" stroke="none" />
+        <rect x="-10" y="252" width="1460" height="12" fill="var(--black)" stroke="none" />
       </g>
     </svg>
   );

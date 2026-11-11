@@ -4,8 +4,8 @@ import { person } from '../../config/portfolio';
 import { arc, columnGeo, panelBands } from './layout';
 import type { Layout } from './layout';
 
-const INK = '#050505';
-const PAPER = '#E8DCC6';
+const INK = 'var(--black)';
+const PAPER = 'var(--cream)';
 
 /**
  * The symmetric paper facade: steps, stair, engraved panels, inscription band,

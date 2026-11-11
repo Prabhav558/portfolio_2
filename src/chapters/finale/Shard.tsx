@@ -53,7 +53,7 @@ export default function Shard({ seed, uid, tone = 'paper' }: Props) {
 
   const clip = `fin-clip-${uid}`;
   const ink = tone === 'ink';
-  const line = ink ? '#E8DCC6' : '#050505';
+  const line = ink ? 'var(--cream)' : 'var(--black)';
   return (
     <svg viewBox="-6 -6 112 112" aria-hidden="true" focusable="false">
       <defs>
@@ -62,10 +62,10 @@ export default function Shard({ seed, uid, tone = 'paper' }: Props) {
         </clipPath>
       </defs>
       {/* hard black print shadow */}
-      <path d={d} transform="translate(4.5 4.5)" fill="#050505" />
-      <path d={d} fill={ink ? '#050505' : '#E8DCC6'} />
+      <path d={d} transform="translate(4.5 4.5)" fill="var(--black)" />
+      <path d={d} fill={ink ? 'var(--black)' : 'var(--cream)'} />
       <g clipPath={`url(#${clip})`}>
-        {ink ? <path d={shade} fill="#4A1D23" opacity="0.6" /> : <path d={shade} fill="url(#hatch-diag)" />}
+        {ink ? <path d={shade} fill="var(--burgundy-deep)" opacity="0.6" /> : <path d={shade} fill="url(#hatch-diag)" />}
       </g>
       {/* contour lines echo the silhouette */}
       <g fill="none" stroke={line} strokeLinecap="round">
@@ -74,7 +74,7 @@ export default function Shard({ seed, uid, tone = 'paper' }: Props) {
         <path d={d} transform="translate(50 50) scale(.4) translate(-50 -50)" strokeWidth="0.7" strokeDasharray="5 5" />
         <path d={crack} strokeWidth="1.1" />
       </g>
-      <path d={d} fill="none" stroke="#050505" strokeWidth="2.4" strokeLinejoin="round" />
+      <path d={d} fill="none" stroke="var(--black)" strokeWidth="2.4" strokeLinejoin="round" />
     </svg>
   );
 }

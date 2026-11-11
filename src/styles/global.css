@@ -139,3 +139,13 @@ main { position: relative; overflow-x: clip; }
 /* Calm mode (html.calm): mirrors the reduced-motion rules above */
 :root.calm *, :root.calm *::before, :root.calm *::after { scroll-behavior: auto !important; }
 :root.calm .raster { -webkit-mask-image: none; mask-image: none; }
+
+/* Theme change: the new theme is revealed through spreading ink (src/lib/ink.ts).
+   The old page stays as the base layer; the live new page is clipped by --ink-clip,
+   a vector path rewritten every frame. The hold animation only keeps the
+   transition alive until the script ends it. */
+@keyframes ink-hold { from { opacity: 1; } to { opacity: 1; } }
+:root.ink-vt::view-transition-group(root) { animation: ink-hold 6s linear; }
+:root.ink-vt::view-transition-old(root),
+:root.ink-vt::view-transition-new(root) { animation: none; mix-blend-mode: normal; }
+:root.ink-vt::view-transition-new(root) { clip-path: var(--ink-clip, path('M0 0Z')); }

@@ -13,6 +13,7 @@ Repository: [github.com/Prabhav558/portfolio_2](https://github.com/Prabhav558/po
 - An engraved hand that follows the cursor on desktop; hold to ink the grain in the opening chapter
 - Hold-to-pour interaction in the Process & Skills chapter
 - Case-study pages for each project at `#/work/<slug>`, with architecture breakdowns
+- Dark / light theme toggle in the nav: the new theme is revealed as spreading ink that grows out of the toggle (`src/lib/ink.ts`). Dark is the original palette; the light palette lives in one block in `src/styles/tokens.css`
 - Calm mode toggle and `prefers-reduced-motion` support, each with a fully composed static layout
 - "Skip to work" link and a keyboard-accessible chapter menu
 - Responsive down to 360px wide

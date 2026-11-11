@@ -5,12 +5,12 @@
  */
 import { mulberry32 } from '../../lib/random';
 
-export const RED = '#722F37';
-export const RED_DEEP = '#4A1D23';
-export const BLACK = '#050505';
-export const PAPER = '#E8DCC6';
-export const LATTE = '#B7A89A';
-export const INK = '#111111';
+export const RED = 'var(--burgundy)';
+export const RED_DEEP = 'var(--burgundy-deep)';
+export const BLACK = 'var(--black)';
+export const PAPER = 'var(--cream)';
+export const LATTE = 'var(--latte)';
+export const INK = 'var(--ink)';
 
 export const r1 = (v: number) => Math.round(v * 10) / 10;
 const clamp = (v: number, a: number, b: number) => Math.min(b, Math.max(a, v));

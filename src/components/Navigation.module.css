@@ -52,6 +52,17 @@
   transition: color 0.2s;
 }
 .resume:hover { color: var(--red); }
+.theme {
+  display: grid;
+  place-items: center;
+  width: 26px;
+  height: 24px;
+  border: 1.5px solid var(--black);
+  transition: background 0.2s;
+}
+.theme:hover { background: color-mix(in srgb, var(--ink) calc(0.08 * 100%), transparent); }
+.theme svg { transition: transform 0.5s var(--ease-out); }
+.theme:hover svg { transform: rotate(180deg); }
 .calm {
   border: 1.5px solid var(--black);
   padding: 4px 8px;
@@ -61,7 +72,7 @@
   font-size: var(--fs-micro);
   transition: background 0.2s, color 0.2s;
 }
-.calm:hover { background: rgba(17, 17, 17, 0.08); }
+.calm:hover { background: color-mix(in srgb, var(--ink) calc(0.08 * 100%), transparent); }
 .calmOn { background: var(--red); color: var(--paper); border-color: var(--red); }
 .calmOn:hover { background: var(--red-deep); }
 .menuBtn {
@@ -100,7 +111,7 @@
   width: 100%;
   text-align: left;
   padding: 9px 0;
-  border-top: 1px solid rgba(17, 17, 17, 0.18);
+  border-top: 1px solid color-mix(in srgb, var(--ink) calc(0.18 * 100%), transparent);
   transition: color 0.2s, padding 0.3s var(--ease-out);
 }
 .item:hover { color: var(--red); padding-left: 6px; }

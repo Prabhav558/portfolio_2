@@ -3,6 +3,7 @@ import { chapters, type ChapterId } from '../config/chapters';
 import { brand } from '../config/brand';
 import { person } from '../config/portfolio';
 import { isCalm, setCalm } from '../lib/calm';
+import { toggleTheme, useTheme } from '../lib/theme';
 import { scrollToChapter, useActiveChapter } from '../lib/progressStore';
 import Wordmark from './Wordmark';
 import styles from './Navigation.module.css';
@@ -12,6 +13,7 @@ export default function Navigation() {
   const current = chapters.find((c) => c.id === active)!;
   const [open, setOpen] = useState(false);
   const calm = isCalm();
+  const theme = useTheme();
   const menuRef = useRef<HTMLDivElement>(null);
   const toggleRef = useRef<HTMLButtonElement>(null);
 
@@ -61,6 +63,22 @@ export default function Navigation() {
         >
           Résumé
         </a>
+        <button
+          type="button"
+          className={styles.theme}
+          aria-label={theme === 'dark' ? 'Switch to light mode' : 'Switch to dark mode'}
+          title={theme === 'dark' ? 'Light mode' : 'Dark mode'}
+          onClick={(e) => {
+            const r = e.currentTarget.getBoundingClientRect();
+            toggleTheme({ x: r.left + r.width / 2, y: r.top + r.height / 2 });
+          }}
+          data-cursor="hover"
+        >
+          <svg viewBox="0 0 16 16" width="14" height="14" aria-hidden="true">
+            <circle cx="8" cy="8" r="6.2" fill="none" stroke="currentColor" strokeWidth="1.5" />
+            <path d="M8 1.8a6.2 6.2 0 0 1 0 12.4z" fill="currentColor" />
+          </svg>
+        </button>
         <button
           type="button"
           className={`${styles.calm} ${calm ? styles.calmOn : ''}`}

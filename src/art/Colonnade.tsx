@@ -3,10 +3,10 @@ import type { CSSProperties } from 'react';
 import { hatch, smoothPath } from './procedural';
 import type { Pt } from './procedural';
 
-const INK = '#050505';
-const PAPER = '#E8DCC6';
-const RED = '#722F37';
-const DEEP = '#4A1D23';
+const INK = 'var(--black)';
+const PAPER = 'var(--cream)';
+const RED = 'var(--burgundy)';
+const DEEP = 'var(--burgundy-deep)';
 
 export const COLONNADE_VIEWBOX = { w: 1600, h: 900 } as const;
 

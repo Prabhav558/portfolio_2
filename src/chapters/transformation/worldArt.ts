@@ -3,7 +3,7 @@ import { smoothPath } from '../../art/procedural';
 
 /* The world: night stripes, stars, ridges, soil strata, pools, and the germinating plants. */
 
-export const DEEP = '#4A1D23';
+export const DEEP = 'var(--burgundy-deep)';
 
 type P2 = [number, number];
 const r1 = (n: number) => {

@@ -1,9 +1,9 @@
 import { mulberry32 } from '../../lib/random';
 
-export const INK = '#050505';
-export const PAPER = '#E8DCC6';
-export const LATTE = '#B7A89A';
-export const RED = '#722F37';
+export const INK = 'var(--black)';
+export const PAPER = 'var(--cream)';
+export const LATTE = 'var(--latte)';
+export const RED = 'var(--burgundy)';
 
 const r1 = (n: number) => {
   const v = Math.round(n * 10) / 10;

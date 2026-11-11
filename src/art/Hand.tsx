@@ -23,8 +23,8 @@ export const HAND_VIEWBOX = {
   grip: { x: 0, y: 140, w: 560, h: 360 },
 } as const;
 
-const INK = '#050505';
-const PAPER = '#E8DCC6';
+const INK = 'var(--black)';
+const PAPER = 'var(--cream)';
 
 /* ------------------------------------------------------------------ */
 /* Geometry helpers (module level: computed once)                      */

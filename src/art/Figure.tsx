@@ -4,10 +4,10 @@ import { contourHatch, hatch, polySmooth, smoothPath } from './procedural';
 import type { Pt } from './procedural';
 import { mulberry32 } from '../lib/random';
 
-const INK = '#050505';
-const INK2 = '#111111';
-const PAPER = '#E8DCC6';
-const BLUE = '#B7A89A';
+const INK = 'var(--black)';
+const INK2 = 'var(--ink)';
+const PAPER = 'var(--cream)';
+const BLUE = 'var(--latte)';
 
 export const FIGURE_VIEWBOX = { w: 400, h: 1000 } as const;
 

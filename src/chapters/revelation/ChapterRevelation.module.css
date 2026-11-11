@@ -210,7 +210,7 @@ section .cap {
   font-size: clamp(0.88rem, 1.08vw, 1.04rem);
   line-height: 1.5;
   color: var(--cream);
-  border-top: 1px solid rgba(183, 168, 154, 0.35);
+  border-top: 1px solid color-mix(in srgb, var(--latte) calc(0.35 * 100%), transparent);
 }
 .bullets li:first-child {
   border-top: 0;
@@ -285,7 +285,7 @@ section .cap {
   display: grid;
   gap: 1px;
   padding-top: 8px;
-  border-top: 1px solid rgba(183, 168, 154, 0.4);
+  border-top: 1px solid color-mix(in srgb, var(--latte) calc(0.4 * 100%), transparent);
   font-family: var(--font-mono);
   font-size: 0.7rem;
   letter-spacing: 0.04em;

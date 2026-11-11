@@ -20,7 +20,7 @@ export default function SvgDefs() {
         {/* Print misregistration: offsets a red ghost under the art */}
         <filter id="misregister" x="-5%" y="-5%" width="110%" height="110%">
           <feOffset in="SourceAlpha" dx="3" dy="2" result="o" />
-          <feFlood floodColor="#722F37" floodOpacity="0.55" />
+          <feFlood floodColor="var(--burgundy)" floodOpacity="0.55" />
           <feComposite in2="o" operator="in" result="ghost" />
           <feMerge>
             <feMergeNode in="ghost" />
@@ -43,25 +43,25 @@ export default function SvgDefs() {
 
         {/* Hatch patterns (black ink) */}
         <pattern id="hatch-diag" width="6" height="6" patternUnits="userSpaceOnUse" patternTransform="rotate(45)">
-          <line x1="0" y1="0" x2="0" y2="6" stroke="#050505" strokeWidth="1.4" />
+          <line x1="0" y1="0" x2="0" y2="6" stroke="var(--black)" strokeWidth="1.4" />
         </pattern>
         <pattern id="hatch-diag-fine" width="4" height="4" patternUnits="userSpaceOnUse" patternTransform="rotate(-35)">
-          <line x1="0" y1="0" x2="0" y2="4" stroke="#050505" strokeWidth="0.8" />
+          <line x1="0" y1="0" x2="0" y2="4" stroke="var(--black)" strokeWidth="0.8" />
         </pattern>
         <pattern id="hatch-cross" width="6" height="6" patternUnits="userSpaceOnUse" patternTransform="rotate(30)">
-          <path d="M0 0V6M0 0H6" stroke="#050505" strokeWidth="1" />
+          <path d="M0 0V6M0 0H6" stroke="var(--black)" strokeWidth="1" />
         </pattern>
         <pattern id="scan-v" width="5" height="10" patternUnits="userSpaceOnUse">
-          <rect width="2.2" height="10" fill="#050505" />
+          <rect width="2.2" height="10" fill="var(--black)" />
         </pattern>
         <pattern id="scan-h" width="10" height="5" patternUnits="userSpaceOnUse">
-          <rect width="10" height="2" fill="#050505" />
+          <rect width="10" height="2" fill="var(--black)" />
         </pattern>
         <pattern id="halftone" width="7" height="7" patternUnits="userSpaceOnUse" patternTransform="rotate(20)">
-          <circle cx="3.5" cy="3.5" r="1.5" fill="#050505" />
+          <circle cx="3.5" cy="3.5" r="1.5" fill="var(--black)" />
         </pattern>
         <pattern id="halftone-paper" width="7" height="7" patternUnits="userSpaceOnUse" patternTransform="rotate(20)">
-          <circle cx="3.5" cy="3.5" r="1.3" fill="#E8DCC6" />
+          <circle cx="3.5" cy="3.5" r="1.3" fill="var(--cream)" />
         </pattern>
       </defs>
     </svg>

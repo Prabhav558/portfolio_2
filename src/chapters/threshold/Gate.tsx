@@ -3,9 +3,9 @@ import { Figure } from '../../art';
 import { arc, diskArt } from './layout';
 import type { Layout } from './layout';
 
-const INK = '#050505';
-const RED = '#722F37';
-const DEEP = '#4A1D23';
+const INK = 'var(--black)';
+const RED = 'var(--burgundy)';
+const DEEP = 'var(--burgundy-deep)';
 
 /**
  * The inside of the gate: the engraved burgundy moon, framing either the portrait

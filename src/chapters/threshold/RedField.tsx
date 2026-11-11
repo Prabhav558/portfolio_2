@@ -20,9 +20,9 @@ export default function RedField() {
   }, []);
   return (
     <svg viewBox="0 0 1600 900" preserveAspectRatio="xMidYMid slice" width="100%" height="100%" aria-hidden="true" focusable="false">
-      <rect width="1600" height="900" fill="#722F37" />
-      <path d={d.deep} fill="none" stroke="#4A1D23" strokeWidth={2.4} strokeLinecap="round" opacity={0.85} />
-      <path d={d.black} fill="none" stroke="#050505" strokeWidth={1.8} strokeLinecap="round" />
+      <rect width="1600" height="900" fill="var(--burgundy)" />
+      <path d={d.deep} fill="none" stroke="var(--burgundy-deep)" strokeWidth={2.4} strokeLinecap="round" opacity={0.85} />
+      <path d={d.black} fill="none" stroke="var(--black)" strokeWidth={1.8} strokeLinecap="round" />
     </svg>
   );
 }

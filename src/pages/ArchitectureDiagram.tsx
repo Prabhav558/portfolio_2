@@ -2,10 +2,10 @@ import { useMemo } from 'react';
 import type { ArchitectureItem } from '../config/portfolio';
 import styles from './CaseStudy.module.css';
 
-const INK = '#050505';
-const BURG = '#722F37';
-const CREAM = '#E8DCC6';
-const LATTE = '#B7A89A';
+const INK = 'var(--black)';
+const BURG = 'var(--burgundy)';
+const CREAM = 'var(--cream)';
+const LATTE = 'var(--latte)';
 
 const BOX_H = 112;
 const PAD = 14;

@@ -43,8 +43,8 @@ function SleeveExtension() {
       height="100%"
       focusable="false"
     >
-      <path d="M985 411 L2560 880 L2560 1360 L985 611 Z" fill="#050505" />
-      <path d="M1000 470 L2560 1000 M1000 545 L2560 1170" stroke="#E8DCC6" strokeWidth={1.4} opacity={0.55} fill="none" />
+      <path d="M985 411 L2560 880 L2560 1360 L985 611 Z" fill="var(--black)" />
+      <path d="M1000 470 L2560 1000 M1000 545 L2560 1170" stroke="var(--cream)" strokeWidth={1.4} opacity={0.55} fill="none" />
     </svg>
   );
 }
@@ -279,10 +279,10 @@ export default function OpeningSequence() {
             </div>
             <svg viewBox="0 0 400 300" preserveAspectRatio="xMidYMid slice" width="100%" height="100%" focusable="false">
               <g data-insetbloom="">
-                <path d={INSET_BLOOM.halo} fill="#050505" opacity={0.3} />
-                <path d={INSET_BLOOM.drip} fill="#722F37" stroke="#050505" strokeWidth={2} strokeLinejoin="round" />
-                <path d={INSET_BLOOM.d} fill="#722F37" stroke="#050505" strokeWidth={2.4} strokeLinejoin="round" />
-                <path d={INSET_BLOOM.shade} fill="#4A1D23" opacity={0.5} />
+                <path d={INSET_BLOOM.halo} fill="var(--black)" opacity={0.3} />
+                <path d={INSET_BLOOM.drip} fill="var(--burgundy)" stroke="var(--black)" strokeWidth={2} strokeLinejoin="round" />
+                <path d={INSET_BLOOM.d} fill="var(--burgundy)" stroke="var(--black)" strokeWidth={2.4} strokeLinejoin="round" />
+                <path d={INSET_BLOOM.shade} fill="var(--burgundy-deep)" opacity={0.5} />
               </g>
             </svg>
           </div>

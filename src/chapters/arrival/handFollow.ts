@@ -97,8 +97,8 @@ export function attachHandFollow({ root, follow, tipMark, shoulderMark, ink }: O
     if (!g) {
       g = document.createElementNS(SVG_NS, 'g');
       const path = document.createElementNS(SVG_NS, 'path');
-      path.setAttribute('fill', '#722F37');
-      path.setAttribute('stroke', '#050505');
+      path.setAttribute('fill', 'var(--burgundy)');
+      path.setAttribute('stroke', 'var(--black)');
       path.setAttribute('stroke-width', '2.5');
       path.setAttribute('stroke-linejoin', 'round');
       path.setAttribute('vector-effect', 'non-scaling-stroke');

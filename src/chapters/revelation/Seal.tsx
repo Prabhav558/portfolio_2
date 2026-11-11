@@ -1,9 +1,9 @@
 import { useId } from 'react';
 
-const INK = '#050505';
-const CREAM = '#E8DCC6';
-const LATTE = '#B7A89A';
-const BURG = '#722F37';
+const INK = 'var(--black)';
+const CREAM = 'var(--cream)';
+const LATTE = 'var(--latte)';
+const BURG = 'var(--burgundy)';
 
 const f = (n: number) => n.toFixed(1);
 

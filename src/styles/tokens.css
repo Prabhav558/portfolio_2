@@ -1,4 +1,6 @@
-:root {
+:root,
+:root[data-theme='dark'] {
+  color-scheme: dark;
   /* Palette: deep burgundy, mocha cream, cosmic latte + ink.
      Legacy names are kept so existing modules keep working:
      --red = burgundy, --paper = mocha cream, --gray/--blue = cosmic latte. */
@@ -49,4 +51,22 @@
   --z-nav: 1000;
   --z-menu: 1100;
   --z-cursor: 2000;
+}
+
+/* LIGHT THEME: the whole light palette lives in this one block.
+   Dark (above) is the original palette and is untouched.
+   Every colour in the site reads these six tokens, so swapping a value here
+   re-skins the engraved art, the UI and the case studies together.
+   PLACEHOLDER VALUES until the real light palette is dropped in:
+   the roles are inverted (ground and hard line go light, paper and text go dark),
+   burgundy is inverted too (rich burgundy -> pale rosewood), latte deepens so it
+   still reads on a light ground. */
+:root[data-theme='light'] {
+  color-scheme: light;
+  --black: #F3EDE1;        /* ground + hard ink line (dark: #050505) */
+  --ink: #FBF8F1;          /* raised card / text-on-paper (dark: #111111) */
+  --cream: #221A1C;        /* paper fill + text on ground (dark: #E8DCC6) */
+  --latte: #7A6B5D;        /* narrative accent (dark: #B7A89A) */
+  --burgundy: #DDBDB6;     /* ground / fill / accent (dark: #722F37) */
+  --burgundy-deep: #C79E98; /* shade on burgundy (dark: #4A1D23) */
 }

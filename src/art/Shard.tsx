@@ -4,8 +4,8 @@ import { contourHatch, hatch, polySmooth, roughen, smoothPath } from './procedur
 import type { Pt } from './procedural';
 import { mulberry32 } from '../lib/random';
 
-const INK = '#050505';
-const PAPER = '#E8DCC6';
+const INK = 'var(--black)';
+const PAPER = 'var(--cream)';
 
 interface Props {
   /** every seed gives a distinct fragment */

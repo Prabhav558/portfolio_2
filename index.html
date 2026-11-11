@@ -30,6 +30,14 @@
       href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400..900;1,6..96,400..900&family=Archivo:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap"
       rel="stylesheet"
     />
+    <script>
+      /* Apply the saved theme before first paint (no flash). Dark is the default. */
+      try {
+        document.documentElement.dataset.theme = localStorage.getItem('theme') === 'light' ? 'light' : 'dark';
+      } catch (e) {
+        document.documentElement.dataset.theme = 'dark';
+      }
+    </script>
     <title>Prabhav Singh — Backend &amp; Agentic-AI Engineer</title>
   </head>
   <body>

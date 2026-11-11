@@ -7,11 +7,11 @@ import { mulberry32 } from '../lib/random';
  * Header illustrations for the case-study pages: engraved plates drawn
  * procedurally (seeded, computed once). Palette hexes only.
  */
-const INK = '#050505';
-const BURG = '#722F37';
-const DEEP = '#4A1D23';
-const CREAM = '#E8DCC6';
-const LATTE = '#B7A89A';
+const INK = 'var(--black)';
+const BURG = 'var(--burgundy)';
+const DEEP = 'var(--burgundy-deep)';
+const CREAM = 'var(--cream)';
+const LATTE = 'var(--latte)';
 
 export const ART_W = 960;
 export const ART_H = 420;

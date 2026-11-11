@@ -4,7 +4,7 @@ import { woodgrain } from './procedural';
 
 interface Props {
   seed?: number;
-  /** 'deep' = #4A1D23 plank (default), 'red' = brighter #722F37 plank */
+  /** 'deep' = var(--burgundy-deep) plank (default), 'red' = brighter var(--burgundy) plank */
   tone?: 'red' | 'deep';
   className?: string;
   style?: CSSProperties;
@@ -25,8 +25,8 @@ export default function Woodgrain({ seed = 7, tone = 'deep', className, style }:
       streaks: streaks.map((r) => r.d).join(''),
     };
   }, [seed]);
-  const base = tone === 'red' ? '#722F37' : '#4A1D23';
-  const streak = tone === 'red' ? '#4A1D23' : '#722F37';
+  const base = tone === 'red' ? 'var(--burgundy)' : 'var(--burgundy-deep)';
+  const streak = tone === 'red' ? 'var(--burgundy-deep)' : 'var(--burgundy)';
   return (
     <svg
       viewBox={`0 0 ${W} ${H}`}
@@ -40,7 +40,7 @@ export default function Woodgrain({ seed = 7, tone = 'deep', className, style }:
     >
       <rect width={W} height={H} fill={base} />
       <path d={geo.streaks} fill={streak} opacity={0.3} />
-      <path d={geo.grain} fill="#050505" />
+      <path d={geo.grain} fill="var(--black)" />
     </svg>
   );
 }

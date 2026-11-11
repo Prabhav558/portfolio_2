@@ -3,9 +3,9 @@ import { mulberry32 } from '../../lib/random';
 import { fmt, type Pt } from '../../art/procedural';
 import { bell, ribbon } from './geo';
 
-const INK = '#050505';
-const PAPER = '#E8DCC6';
-const BLUE = '#B7A89A';
+const INK = 'var(--black)';
+const PAPER = 'var(--cream)';
+const BLUE = 'var(--latte)';
 
 const CX = 800;
 const CY = 500;

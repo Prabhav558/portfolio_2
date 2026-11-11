@@ -20,7 +20,7 @@
   border-radius: 50%;
   background: var(--paper);
   border: 1.5px solid var(--black);
-  box-shadow: 0 0 0 1px rgba(232, 220, 198, 0.35);
+  box-shadow: 0 0 0 1px color-mix(in srgb, var(--cream) calc(0.35 * 100%), transparent);
   display: grid;
   place-items: center;
   transition:

@@ -10,11 +10,11 @@ import { bell, ellipse, line, offset, poly, ribbon, sampleOpen, type Pt } from '
  * Canvas: x 0..1600, y -100..1360 (desktop frame = 0 0 1600 1000).
  */
 
-export const INK = '#050505';
-export const INK2 = '#111111';
-export const PAPER = '#E8DCC6';
-export const BLUE = '#B7A89A';
-export const RED = '#722F37';
+export const INK = 'var(--black)';
+export const INK2 = 'var(--ink)';
+export const PAPER = 'var(--cream)';
+export const BLUE = 'var(--latte)';
+export const RED = 'var(--burgundy)';
 
 export const DESK_VB = { x: 230, y: 120, w: 1140, h: 712 };
 export const DESK_VIEWBOX = `${DESK_VB.x} ${DESK_VB.y} ${DESK_VB.w} ${DESK_VB.h}`;

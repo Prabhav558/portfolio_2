@@ -15,7 +15,7 @@
   top: 12px;
   bottom: 12px;
   width: 1px;
-  background: rgba(17, 17, 17, 0.2);
+  background: color-mix(in srgb, var(--ink) calc(0.2 * 100%), transparent);
 }
 .fill {
   position: absolute;

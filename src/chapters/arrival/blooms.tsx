@@ -70,8 +70,8 @@ export const BLOOMS: Bloom[] = SPECS.map((s, i) => ({
   dots: s.dots ?? [],
 }));
 
-const RED = '#722F37';
-const INK = '#050505';
+const RED = 'var(--burgundy)';
+const INK = 'var(--black)';
 
 export function BloomShape({ b }: { b: Bloom }) {
   return (
@@ -82,7 +82,7 @@ export function BloomShape({ b }: { b: Bloom }) {
           <path key={i} data-drip="" data-o={dr.o} d={dr.d} fill={RED} stroke={INK} strokeWidth={1.4} strokeLinejoin="round" />
         ))}
         <path d={b.d} fill={RED} stroke={INK} strokeWidth={1.7} strokeLinejoin="round" />
-        <path d={b.shade} fill="#4A1D23" opacity={0.5} />
+        <path d={b.shade} fill="var(--burgundy-deep)" opacity={0.5} />
         {b.dots.map((p, i) => (
           <circle key={i} cx={p.x} cy={p.y} r={p.r} fill={RED} stroke={INK} strokeWidth={1.2} />
         ))}
