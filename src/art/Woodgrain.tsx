@@ -25,7 +25,7 @@ export default function Woodgrain({ seed = 7, tone = 'deep', className, style }:
       streaks: streaks.map((r) => r.d).join(''),
     };
   }, [seed]);
-  const base = tone === 'red' ? 'var(--burgundy)' : 'var(--burgundy-deep)';
+  const base = tone === 'red' ? 'var(--burgundy)' : 'var(--wood-base)';
   const streak = tone === 'red' ? 'var(--burgundy-deep)' : 'var(--burgundy)';
   return (
     <svg
@@ -40,7 +40,7 @@ export default function Woodgrain({ seed = 7, tone = 'deep', className, style }:
     >
       <rect width={W} height={H} fill={base} />
       <path d={geo.streaks} fill={streak} opacity={0.3} />
-      <path d={geo.grain} fill="var(--black)" />
+      <path d={geo.grain} fill="var(--wood-grain)" />
     </svg>
   );
 }

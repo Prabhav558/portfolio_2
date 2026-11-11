@@ -38,7 +38,7 @@
   top: calc(var(--nav-h) + 14px);
   left: var(--gutter);
   margin: 0;
-  color: var(--ink);
+  color: var(--folio-ink);
   pointer-events: none;
 }
 

@@ -11,6 +11,12 @@
   --accent: var(--latte); /* narrative accent (was electric blue) */
   --accent-text: var(--latte); /* accent used as TEXT on the ground (light theme needs a darker one) */
   --accent-on-paper: var(--latte); /* accent used as text on a paper (cream / espresso) box */
+  /* Scoped art tokens. Dark values equal what the art always used; light overrides them. */
+  --figure-ink: var(--black);   /* the Keeper silhouette in the About gate */
+  --figure-ink-2: var(--ink);   /* its fold lines */
+  --wood-base: var(--burgundy-deep); /* the hero woodgrain plank */
+  --wood-grain: var(--black);        /* its grain lines */
+  --folio-ink: var(--ink);      /* the "II — About" folio over the facade */
 
   --red: var(--burgundy);
   --red-deep: var(--burgundy-deep);
@@ -72,6 +78,11 @@
   --latte: #CC5500;        /* accent fills (dark: #B7A89A) */
   --accent-text: #B04700;  /* accent as text on cream lemon, 5:1 (dark: = latte) */
   --accent-on-paper: #F08A3C; /* accent as text on espresso, 6:1 (dark: = latte) */
+  --figure-ink: #2B1A12;   /* silhouette goes espresso on the pale moon (dark: = black) */
+  --figure-ink-2: #4D362A;
+  --folio-ink: #2B1A12;    /* (dark: = ink) */
+  --wood-base: #FBF5D9;    /* clean lemon plank, not khaki (dark: = burgundy-deep) */
+  --wood-grain: #E6DBAD;   /* grain reads as faint darker lines, like wood (dark: = black) */
   --burgundy: #F4ECC6;     /* ground / fill / accent (dark: #722F37) */
   --burgundy-deep: #EAE0B5; /* shade on burgundy (dark: #4A1D23) */
 }

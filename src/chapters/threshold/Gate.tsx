@@ -90,7 +90,10 @@ export default function Gate({ L, portrait = null }: { L: Layout; portrait?: str
                 <rect x={-700} y={-700} width={1400} height={1400} fill="none" />
                 <g transform={`translate(${-cx} ${-(cy + r * 0.45)})`}>
                   <svg x={L.fig.x} y={L.fig.y} width={L.fig.w} height={L.fig.h} overflow="visible">
-                    <Figure variant="silhouette" view="back" />
+                    {/* the silhouette reads --black / --ink; remap them locally so it can go dark on a pale moon */}
+                    <g style={{ '--black': 'var(--figure-ink)', '--ink': 'var(--figure-ink-2)' } as React.CSSProperties}>
+                      <Figure variant="silhouette" view="back" />
+                    </g>
                   </svg>
                 </g>
               </g>
