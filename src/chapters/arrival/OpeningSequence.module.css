@@ -91,7 +91,7 @@
   align-items: center;
   gap: 14px;
   margin: 0 0 clamp(8px, 1.6vh, 16px);
-  color: var(--accent);
+  color: var(--accent-text);
   font-size: 0.74rem;
   text-shadow: 1px 1px 0 var(--black);
 }

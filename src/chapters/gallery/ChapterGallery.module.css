@@ -56,7 +56,7 @@
   color: var(--paper);
   box-shadow: 3px 3px 0 var(--burgundy);
 }
-.introNo { color: var(--accent); }
+.introNo { color: var(--accent-text); }
 
 .introCount {
   position: absolute;
@@ -79,7 +79,7 @@
   padding-bottom: 0.08em;
   color: var(--paper);
 }
-.countLbl { color: var(--accent); }
+.countLbl { color: var(--accent-text); }
 
 .introBlock {
   position: absolute;
@@ -99,7 +99,7 @@
   text-shadow: 5px 5px 0 var(--black);
 }
 .introWord { display: block; padding-bottom: 0.06em; }
-.introItalic { font-style: italic; color: var(--accent); padding-left: 0.9em; }
+.introItalic { font-style: italic; color: var(--accent-text); padding-left: 0.9em; }
 .introBlock .introCap { position: relative; }
 
 /* ------------------------------------------------------------------ */
@@ -152,9 +152,9 @@
   --stroke: var(--burgundy-deep);
   --pbg: var(--burgundy);
   --pfg: var(--paper);
-  --pacc: var(--latte);
+  --pacc: var(--accent-text);
   --chip: var(--paper);
-  --focus: var(--latte);
+  --focus: var(--accent-text);
   --tabbg: var(--paper);
   --tabfg: var(--ink);
   --shadow: var(--black);
@@ -168,9 +168,9 @@
   --stroke: var(--black);
   --pbg: var(--black);
   --pfg: var(--paper);
-  --pacc: var(--latte);
+  --pacc: var(--accent-text);
   --chip: var(--paper);
-  --focus: var(--latte);
+  --focus: var(--accent-text);
   --tabbg: var(--paper);
   --tabfg: var(--ink);
   --shadow: var(--burgundy);
@@ -327,8 +327,8 @@
   border-bottom: 3px solid var(--black);
 }
 .idxTitle { margin: 0; font-size: clamp(2.4rem, min(6vw, 10vh), 6rem); line-height: 0.95; padding-bottom: 0.06em; }
-.idxTitle em { color: var(--latte); }
-.idxCount { color: var(--latte); }
+.idxTitle em { color: var(--accent-text); }
+.idxCount { color: var(--accent-text); }
 .idxList { list-style: none; margin: 0; padding: 0; display: grid; }
 .idxRow {
   display: grid;
@@ -338,9 +338,9 @@
   padding: clamp(16px, 4.6vh, 52px) 0;
   border-bottom: 2px solid var(--black);
 }
-.idxNo { font-family: var(--font-mono); font-size: 0.8rem; letter-spacing: var(--track-wide); color: var(--latte); }
+.idxNo { font-family: var(--font-mono); font-size: 0.8rem; letter-spacing: var(--track-wide); color: var(--accent-text); }
 .idxName { margin: 0; font-size: clamp(1.9rem, min(4vw, 7vh), 4.6rem); line-height: 1; padding-bottom: 0.06em; }
-.idxKicker { margin: 6px 0 0; color: var(--latte); }
+.idxKicker { margin: 6px 0 0; color: var(--accent-text); }
 .idxSum { margin: 0; font-size: clamp(0.88rem, 1.7vh, 1.08rem); line-height: 1.45; }
 .idxStack {
   list-style: none;

@@ -166,7 +166,7 @@ section .cap {
 }
 .tag {
   margin: 0 0 6px;
-  color: var(--latte);
+  color: var(--accent-text);
 }
 .org {
   margin: 0;
@@ -193,7 +193,7 @@ section .cap {
   border-bottom: 1px solid var(--latte);
 }
 .roleName {
-  color: var(--latte);
+  color: var(--accent-text);
   font-weight: 700;
 }
 .bullets {
@@ -238,7 +238,7 @@ section .cap {
 .colHead {
   margin: 0 0 12px;
   padding-bottom: 8px;
-  color: var(--latte);
+  color: var(--accent-text);
   border-bottom: 2px solid var(--cream);
 }
 .degree {
@@ -253,7 +253,7 @@ section .cap {
   font-size: 0.72rem;
   letter-spacing: 0.05em;
   text-transform: uppercase;
-  color: var(--latte);
+  color: var(--accent-text);
   line-height: 1.5;
 }
 .score {
@@ -272,7 +272,7 @@ section .cap {
   font-size: 0.78rem;
   letter-spacing: 0.06em;
   text-transform: uppercase;
-  color: var(--latte);
+  color: var(--accent-text);
 }
 .schools {
   list-style: none;
@@ -290,7 +290,7 @@ section .cap {
   font-size: 0.7rem;
   letter-spacing: 0.04em;
   line-height: 1.45;
-  color: var(--latte);
+  color: var(--accent-text);
 }
 .schools li span:first-child {
   color: var(--cream);
@@ -343,7 +343,7 @@ section .cap {
   top: 2px;
   width: 28px;
   height: 28px;
-  fill: var(--latte);
+  fill: var(--accent-text);
   stroke: var(--cream);
   stroke-width: 1.2;
   stroke-linejoin: round;
@@ -360,7 +360,7 @@ section .cap {
   letter-spacing: 0.04em;
   text-transform: uppercase;
   line-height: 1.45;
-  color: var(--latte);
+  color: var(--accent-text);
 }
 
 /* the hand-off: a burgundy iris with an ink rim */

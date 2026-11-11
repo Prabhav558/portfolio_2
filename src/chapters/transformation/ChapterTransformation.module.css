@@ -38,7 +38,7 @@
 }
 .plate :global(.label) {
   letter-spacing: var(--track-wide);
-  color: var(--latte);
+  color: var(--accent-text);
 }
 .title {
   margin: 0;
@@ -57,7 +57,7 @@
   font-weight: 500;
   font-size: clamp(1.05rem, 1.5vw, 1.4rem);
   line-height: 1.25;
-  color: var(--latte);
+  color: var(--accent-text);
 }
 .sub span {
   grid-area: 1 / 1;

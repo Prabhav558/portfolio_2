@@ -70,7 +70,7 @@
 }
 .kicker {
   margin: 0 0 clamp(14px, 2vw, 24px);
-  color: var(--latte);
+  color: var(--accent-text);
   display: flex;
   align-items: center;
   gap: 14px;
@@ -93,7 +93,7 @@
   font-family: var(--font-display);
   font-style: italic;
   font-size: clamp(1.2rem, 2.2vw, 2rem);
-  color: var(--latte);
+  color: var(--accent-text);
 }
 .summary {
   margin: clamp(14px, 2vw, 22px) 0 0;
@@ -112,7 +112,7 @@
 .plate svg { width: 100%; height: 100%; }
 .plateCap {
   margin: 18px 0 0;
-  color: var(--latte);
+  color: var(--accent-text);
   display: flex;
   justify-content: space-between;
   gap: 16px;
@@ -334,7 +334,7 @@
 }
 .outcome .stripes { -webkit-mask-image: linear-gradient(to right, #000, transparent 55%); mask-image: linear-gradient(to right, #000, transparent 55%); }
 .outcome .sec { border-top: 0; }
-.outcome .secLabel, .outcome .secNum { color: var(--latte); }
+.outcome .secLabel, .outcome .secNum { color: var(--accent-text); }
 .outcome .secNum { text-shadow: 2px 2px 0 var(--black); }
 .outcome .secKind { color: var(--cream); }
 .outcomeText {
@@ -385,7 +385,7 @@
 .pagerLink:hover { background: var(--burgundy-deep); }
 .pagerLink + .pagerLink:hover { background: var(--burgundy-deep); }
 .pagerLink:focus-visible { outline: 2px solid var(--latte); outline-offset: -6px; }
-.pagerDir { color: var(--latte); }
+.pagerDir { color: var(--accent-text); }
 .pagerTitle {
   font-family: var(--font-display);
   font-size: clamp(2rem, 5.4vw, 5rem);
@@ -393,7 +393,7 @@
   letter-spacing: var(--track-mega);
   overflow-wrap: anywhere;
 }
-.pagerKick { font-family: var(--font-display); font-style: italic; color: var(--latte); font-size: clamp(1rem, 1.5vw, 1.3rem); }
+.pagerKick { font-family: var(--font-display); font-style: italic; color: var(--accent-text); font-size: clamp(1rem, 1.5vw, 1.3rem); }
 
 /* ---------- not found ---------- */
 .nf {

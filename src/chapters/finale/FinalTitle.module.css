@@ -36,7 +36,7 @@
 
 .kicker {
   margin: 0 0 clamp(8px, 2svh, 22px);
-  color: var(--latte);
+  color: var(--accent-text);
 }
 
 .titleWrap {
@@ -88,7 +88,7 @@
   display: inline-flex;
   align-items: center;
   gap: 0.7em;
-  color: var(--latte);
+  color: var(--accent-text);
   max-width: 100%;
 }
 .dot {
@@ -213,7 +213,7 @@
   box-shadow: 5px 5px 0 var(--burgundy-deep);
 }
 .tabMini::before { background: var(--black); }
-.tabMini .key { color: var(--latte); }
+.tabMini .key { color: var(--accent-text); }
 .tabMini .val { font-family: var(--font-display); font-size: 1.3rem; line-height: 1; }
 .tabMini:hover,
 .tabMini:focus-visible {
@@ -223,7 +223,7 @@
 .tabMini:hover::before,
 .tabMini:focus-visible::before { background: var(--black); }
 .tabMini:hover .val,
-.tabMini:focus-visible .val { color: var(--latte); }
+.tabMini:focus-visible .val { color: var(--accent-text); }
 
 /* ---------- fragments ---------- */
 .frag,
@@ -292,7 +292,7 @@
 }
 .again:hover,
 .again:focus-visible {
-  color: var(--latte);
+  color: var(--accent-text);
   transform: translate(-2px, -2px);
   box-shadow: 5px 5px 0 var(--burgundy-deep);
 }

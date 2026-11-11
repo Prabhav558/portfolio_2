@@ -9,6 +9,7 @@
   --cream: #E8DCC6;
   --latte: #B7A89A;
   --accent: var(--latte); /* narrative accent (was electric blue) */
+  --accent-text: var(--latte); /* accent used as TEXT on the ground (light theme needs a darker one) */
 
   --red: var(--burgundy);
   --red-deep: var(--burgundy-deep);
@@ -57,16 +58,18 @@
    Dark (above) is the original palette and is untouched.
    Every colour in the site reads these six tokens, so swapping a value here
    re-skins the engraved art, the UI and the case studies together.
-   PLACEHOLDER VALUES until the real light palette is dropped in:
-   the roles are inverted (ground and hard line go light, paper and text go dark),
-   burgundy is inverted too (rich burgundy -> pale rosewood), latte deepens so it
-   still reads on a light ground. */
+   Palette: Deep Midnight Teal #0B3048, Soft Pearl #F2F0E9, Neon Lime #B9F12F.
+   Roles are inverted relative to dark: ground and hard line go pearl, paper
+   fills and text go teal, the old burgundy grounds become slightly deeper pearls, and
+   lime takes the accent role. Lime is for fills and for text ON teal only;
+   on pearl it has no contrast. */
 :root[data-theme='light'] {
   color-scheme: light;
-  --black: #F3EDE1;        /* ground + hard ink line (dark: #050505) */
-  --ink: #FBF8F1;          /* raised card / text-on-paper (dark: #111111) */
-  --cream: #221A1C;        /* paper fill + text on ground (dark: #E8DCC6) */
-  --latte: #7A6B5D;        /* narrative accent (dark: #B7A89A) */
-  --burgundy: #DDBDB6;     /* ground / fill / accent (dark: #722F37) */
-  --burgundy-deep: #C79E98; /* shade on burgundy (dark: #4A1D23) */
+  --black: #F2F0E9;        /* ground + hard ink line (dark: #050505) */
+  --ink: #FAF9F5;          /* raised card / text-on-paper (dark: #111111) */
+  --cream: #0B3048;        /* paper fill + text on ground (dark: #E8DCC6) */
+  --latte: #B9F12F;        /* narrative accent: fills, and text ON teal (dark: #B7A89A) */
+  --accent-text: #4F7300;  /* accent as text on pearl: darkened lime, 5:1 (dark: = latte) */
+  --burgundy: #EBE8DF;     /* ground / fill / accent (dark: #722F37) */
+  --burgundy-deep: #DEDACB; /* shade on burgundy (dark: #4A1D23) */
 }
